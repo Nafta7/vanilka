@@ -1,10 +1,18 @@
 <?php
 
-function theme_resources() {
-  wp_enqueue_style('style', get_stylesheet_uri());
-  wp_enqueue_script('app', get_template_directory_uri() . '/app.js');
+require get_template_directory() . '/helpers/theme_resources.php';
+require get_template_directory() . '/helpers/cleanse.php';
+
+function vanilka_setup() {
+  cleanse_theme();
 }
 
-add_action('wp_enqueue_scripts', 'theme_resources');
+function footer_setup(){
+  cleanse_footer();
+}
+
+add_action('after_setup_theme', 'vanilka_setup');
+add_action('wp_footer', 'footer_setup');
+
 
 ?>
