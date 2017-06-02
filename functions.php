@@ -6,31 +6,31 @@ require get_template_directory() . '/helpers/menus.php';
 require get_template_directory() . '/helpers/featured_image.php';
 require get_template_directory() . '/helpers/widgets.php';
 
-function vanilka_setup() {
+function theme_setup() {
   cleanse_theme();
   enable_featured_image();
 }
 
-function vanilka_init() {
+function theme_init() {
   register_menus();
 }
 
-function vanilka_resources() {
+function theme_resources() {
   add_resources();
 }
 
-function vanilka_widgets() {
+function theme_widgets() {
   enable_widgets();
 }
 
-function vanilka_footer(){
+function theme_footer(){
   cleanse_footer();
 }
 
-add_action('after_setup_theme', 'vanilka_setup');
-add_action('init', 'vanilka_init');
-add_action('wp_enqueue_scripts', 'vanilka_resources');
-add_action('wp_footer', 'vanilka_footer');
-add_action('widgets_init', 'vanilka_widgets');
+add_action('after_setup_theme', 'theme_setup');
+add_action('init', 'theme_init');
+add_action('wp_enqueue_scripts', 'theme_resources');
+add_action('wp_footer', 'theme_footer');
+add_action('widgets_init', 'theme_widgets');
 
 ?>
