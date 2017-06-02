@@ -15,11 +15,9 @@ function add_stylesheet() {
   wp_enqueue_style('style', get_stylesheet_uri());
 }
 
-function theme_resources() {
+function add_resources() {
   add_stylesheet();
   add_script();
 }
-
-add_action('wp_enqueue_scripts', 'theme_resources');
 
  ?>
