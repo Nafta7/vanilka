@@ -7,6 +7,9 @@
       the_post();
       get_template_part('partials/content', get_post_format());
     }
+
+    the_posts_navigation();
+
   } else {
     get_template_part( 'partials/content', 'none' );
   }
