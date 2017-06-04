@@ -19,13 +19,24 @@ npm install
 npm build
 ```
 
-## Develop
+## Live-reload
+
+Open the **package.json** file and edit the *proxy* field in the
+*config* section with the development address of the wordpress site.
+
+Example:
+```json
+"config": {
+  "proxy": "localhost:8000",
+  "port": "3000"
+}
+```
+
+Now you can run *npm start* to let browser-sync do the live reload for us.
 
 ```bash
 npm start
 ```
-
-Now it's ready to edit the new template.
 
 ## License
 
