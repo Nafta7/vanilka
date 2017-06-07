@@ -1,3 +1,5 @@
 node_modules/
 /app.js
-style.css
+/app.min.js
+/style.css
+/style.min.css
