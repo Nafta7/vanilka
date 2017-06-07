@@ -9,6 +9,13 @@
   </head>
   <body>
     <div>
+      <header>
+        <h1>
+          <a href="<?php echo esc_url( home_url( '/' )); ?>">
+            <?php bloginfo('name'); ?>
+          </a>
+        </h1>
+      </header>
       <nav>
         <?php get_template_part('partials/sections/main-nav-menu'); ?>
       </nav>
