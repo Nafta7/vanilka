@@ -16,7 +16,8 @@ function theme_init() {
 }
 
 function theme_resources() {
-  add_resources();
+  add_script();
+  add_stylesheet();
 }
 
 function theme_widgets() {
