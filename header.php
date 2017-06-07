@@ -9,3 +9,6 @@
   </head>
   <body>
     <div>
+      <nav>
+        <?php get_template_part('partials/sections/main-nav-menu'); ?>
+      </nav>
