@@ -1,4 +1,4 @@
 # TODO
 
  - [ ] Custom search form
- - [ ] Improved documentation
+ - [ ] Search page
