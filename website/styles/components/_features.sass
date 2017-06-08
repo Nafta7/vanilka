@@ -1,0 +1,10 @@
+.features
+  padding: 4em 0em
+  @include respond-to(small)
+    display: flex
+
+    & > *
+      flex: 1 0
+
+      &:not(:last-child)
+        padding-right: 1em

@@ -1,0 +1,13 @@
+$breakpoints: (
+  small           : (min-width: 768px),
+  medium          : (min-width: 992px),
+  large           : (min-width: 1200px),
+  extra-small-only: (max-width: 767px)
+);
+
+
+$major-color: hsl(1, 0%, 20%);
+$minor-color: hsl(1, 0%, 40%);
+$accent-color: hsl(1, 0%, 50%);
+$black-color: hsl(1, 0%, 10%);
+$white-color: hsl(1, 0%, 100%);
