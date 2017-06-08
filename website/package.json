@@ -4,12 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "node-sass styles/*.sass -o dist/ --souce-map-embed",
+    "watch:css": "node-sass styles/*.sass -w -o dist/ --souce-map-embed",
+    "build:html": "pug views/*.pug -P -o dist/",
+    "watch:html": "pug views/*.pug -P -w -o dist/",
+    "server": "browser-sync start --server 'dist' --files 'dist/*.css, dist/*.js, dist/*.html'",
+    "watch": "npm run watch:html | npm run watch:css",
+    "serve": "npm run watch | npm run server",
+    "start": "npm run serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.5.3"
+    "browser-sync": "^2.18.12",
+    "node-sass": "^4.5.3",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
