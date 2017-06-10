@@ -1,10 +1,10 @@
 .menu
+  list-style: none
   display: flex
   flex-flow: column
-  list-style: none
-
-  @include respond-to(small)
-    flex-flow: row
 
   a
-    padding: 1em
+    padding: 4rem 1rem 1rem 0
+
+  @include respond-to(extra-small)
+    flex-flow: row
