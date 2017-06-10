@@ -6,9 +6,10 @@
   "scripts": {
     "build": "npm run build:css | npm run build:html",
     "clean": "rimraf dist/*",
+    "clean:css": "rimraf dist/main.css",
     "preproduction": "npm run build",
     "production": "npm run minify:assets",
-    "predeploy": "npm run production",
+    "predeploy": "npm run production && npm run clean:css",
     "deploy": "gh-pages -d dist/",
     "postdeploy": "npm run clean",
     "build:css": "node-sass styles/*.sass -o dist/ --souce-map-embed",
