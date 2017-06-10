@@ -4,8 +4,21 @@
   flex-flow: column
   font-size: 1.3em
 
+  li
+    @include respond-to(extra-small-only)
+      &:not(:last-child) a
+        margin-bottom: 0.5rem
+
+    @include respond-to(extra-small)
+      &:not(:last-child) a
+        padding-right: 1rem
+
   a
-    padding: 4rem 1rem 1rem 0
+    display: inline-block
 
   @include respond-to(extra-small)
     flex-flow: row
+
+  @include respond-to(small-only)
+    margin-top: 1rem
+    text-align: center
