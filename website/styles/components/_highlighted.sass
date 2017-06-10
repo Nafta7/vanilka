@@ -1,10 +1,19 @@
 .highlighted
-  padding: 4em 0em
+  margin-top: 3rem
+  margin-bottom: 3rem
+  display: flex
+  flex-flow: column
+
   @include respond-to(small)
-    display: flex
+    flex-flow: row
 
-    & > *
-      flex: 1 0
+.highlight
+  flex: 1 0
 
-      &:not(:last-child)
-        padding-right: 1em
+  @include respond-to(small-only)
+    &:not(:last-child)
+      margin-bottom: 2rem
+
+  @include respond-to(small)
+    &:not(:last-child)
+      padding-right: 1em
