@@ -4,10 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm run build:css | npm run build:html",
+    "clean": "rimraf dist/*",
+    "preproduction": "npm run build",
+    "production": "npm run minify:assets",
+    "predeploy": "npm run production",
+    "deploy": "gh-pages -d dist/",
+    "postdeploy": "npm run clean",
     "build:css": "node-sass styles/*.sass -o dist/ --souce-map-embed",
     "watch:css": "node-sass styles/*.sass -w -o dist/ --souce-map-embed",
     "build:html": "pug views/*.pug -P -o dist/",
     "watch:html": "pug views/*.pug -P -w -o dist/",
+    "minify:assets": "usemin dist/index.html -d dist -o dist/index.html --rmlr true",
     "server": "browser-sync start --server 'dist' --files 'dist/*.css, dist/*.js, dist/*.html'",
     "watch": "npm run watch:html | npm run watch:css",
     "serve": "npm run watch | npm run server",
@@ -18,7 +26,10 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.12",
+    "gh-pages": "^1.0.0",
     "node-sass": "^4.5.3",
-    "pug-cli": "^1.0.0-alpha6"
+    "pug-cli": "^1.0.0-alpha6",
+    "rimraf": "^2.6.1",
+    "usemin-cli": "^0.5.1"
   }
 }
