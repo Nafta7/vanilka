@@ -4,23 +4,15 @@ Vanilka is an wordpress starter theme.
 
 ## Features
 
-### Minimalist
+- A clean head
+- Helpful partials
+- ES2015 & Sass
+- Live-reload
+- Customizable
 
-Does not include any framework or library like Bootstrap or jQuery, as well as any custom classes.
+## Installation
 
-Only pure, lean markup. A blank canvas.
-
-### Modular
-
-Because the theme was build with modularity in mind, it's very easy to disable the theme features, head over to **functions.php** and you can opt-out of any functionality by commenting out the features.
-
-### Modern
-
-Write the latest version of JavaScript (ES2015) paired with Sass that are automatically compiled with support for live-reload on the browser as you save the files.
-
-Manage front-end dependencies through npm.
-
-## Install
+Clone the repository:
 
 ```bash
 cd path/to/wp-site/wp-content/themes
@@ -30,10 +22,30 @@ npm install
 npm build
 ```
 
-## Live-reload
+## Developing
 
-Open the **package.json** file and edit the *proxy* field in the
-*config* section with the development address of the wordpress site.
+### Watching assets
+
+```bash
+npm run watch
+```
+
+### Building assets
+
+Development:
+
+```bash
+npm run build:development
+```
+
+Production:
+```bash
+npm run build:production
+```
+
+### Enabling live-reload
+
+To enable live-reload you have to provide your local dev-server address to npm's package.json file. Open the **package.json** file and edit the *proxy* field in the *config* section with your local dev-server address.
 
 Example:
 ```json
@@ -42,10 +54,27 @@ Example:
 }
 ```
 
-Now you can run *npm start* to let browser-sync do the live reload for us.
+Now you can run *npm start* to let browser-sync do the live reload.
 
 ```bash
 npm start
+```
+
+## Theme structure
+
+```shell
+themes/vanilka/           # Theme root
+├── assets/               # Theme assets
+│   ├── styles/           # Stylesheet files
+│   │   └── main.scss     # Sass entry point file
+│   └── scripts/          # JavaScript files
+│       └── app.js        # JavaScript entry point file
+├── core/                 # Wordpress theme selected features
+├── node_modules/         # Node.js packages
+├── partials/             # Partial templates
+├── templates/            # Custom Wordpress templates
+├── functions.php         # Wordpress hooks, theme includes
+└──  package.json         # Node.js dependencies and scripts
 ```
 
 ## License
