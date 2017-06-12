@@ -18,7 +18,15 @@ Clone the repository:
 cd path/to/wp-site/wp-content/themes
 git clone https://github.com/Nafta7/vanilka.git theme-name
 cd theme-name
+```
+
+Install the dependencies:
+```bash
 npm install
+```
+
+Build the assets:
+```bash
 npm build
 ```
 
