@@ -11,13 +11,14 @@
     "build:production": "npm run minify",
     "build:development": "npm run build",
     "build": "npm run build:css & npm run build:js",
-    "build:js": "browserify -d src/scripts/app.js -o app.js -t [ babelify --presets [es2015] ]",
-    "watch:js": "watchify -d src/scripts/app.js -o app.js -t [ babelify --presets [es2015] ]",
-    "build:css": "node-sass src/styles/main.scss style.css --source-map-embed",
-    "watch:css": "node-sass src/styles/main.scss style.css --source-map-embed --w",
+    "build:js": "browserify -d assets/scripts/app.js -o app.js -t [ babelify --presets [es2015] ]",
+    "watch:js": "watchify -d assets/scripts/app.js -o app.js -t [ babelify --presets [es2015] ]",
+    "build:css": "node-sass assets/styles/main.scss style.css --source-map-embed",
+    "watch:css": "node-sass assets/styles/main.scss style.css --source-map-embed --w",
     "server": "browser-sync start --proxy $npm_package_config_proxy --files '*.css, **/*.php, *.js'",
     "serve": "npm run watch:css | npm run watch:js |  npm run server",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "watch": "npm run watch:css | npm run watch:js"
   },
   "config": {
     "proxy": "vanilla.dev"
