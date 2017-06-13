@@ -1,0 +1,25 @@
+.container.live-reload
+  h2.page-sub-title Enabling live-reload
+  
+  p.text
+    | To enable live-reload you have to provide your local dev-server 
+    | address to npm's package.json file. Open the package.json file 
+    | and edit the proxy field in the config section with your 
+    | local dev-server address.
+
+  p.text Example:
+  
+  pre
+    code.snippet
+      | "config": {
+      |   "proxy": "localhost:8000"
+      | }
+
+  br
+  p.text 
+    | Now you can run npm start to let browser-sync do the live reload:
+  
+  pre
+    code.snippet  
+      | npm start
+    

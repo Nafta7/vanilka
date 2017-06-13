@@ -1,0 +1,73 @@
+.container.structure
+  h2.page-sub-title Theme structure
+  
+  p.text
+    | The theme structure has the usual Wordpress theme files
+    | with a couple aditions. 
+    
+  p.text 
+    | #[span.mark-d assets] directory 
+    | holds the #[i Sass stylesheet files] (inside 
+    | #[span.mark-l styles] directory) 
+    | and the #[i JavaScript files] (inside 
+    | #[span.mark-l scripts] directory).
+  
+  p.text 
+    | #[span.mark-d lib] is where the Wordpress theme features are enabled,
+    | which are later on included or not from the 
+    | #[span.mark-l functions.php] file.
+    | This directory should be expanded as you wish, if a Wordpress 
+    | feature that you want is not available in the 
+    | #[span.mark-d lib], create 
+    | a new file and then include it from the 
+    | #[span.mark-l functions.php] and 
+    | call it from the necessary hook. Just try to follow this pattern.
+  
+  p.text
+    | #[span.mark-d node_modules] is where the Node.JS dependencies are 
+    | installed, which is ignored by git through the 
+    | #[span.mark-l .gitignore] file.
+  
+  p.text 
+    | #[span.mark-d partials] are neatly organized by 
+    | #[i post, page and sections]. Partials 
+    | are most known as #[b template-parts] and are here to help you 
+    | keep organized. 
+  p.text
+    | #[span.mark-d templates] directory is where the custom templates
+    | lives.
+    
+  p.text
+    | #[span.mark-l functions.php] has the Wordpress hooks and 
+    | is used to select the Wordpress features enabled in 
+    | the #[span.mark-d lib] directory.
+  
+  p.text
+    | #[span.mark-l package.json] is where the Node.JS 
+    | dependencies and scripts are declared.
+    
+  p.text
+    | Be aware, the #[span.mark-l style.css] file is not 
+    | listed here because you should 
+    | generate when you first install the theme (following the 
+    | aforementioned instructions). This file is very important because 
+    | it contains meta data that is necessary to activate the theme from
+    | the admin panel.
+    
+  p.text
+    | To better illustrate the theme structure:
+  
+  pre
+    code.snippet
+      | themes/vanilka/           # Theme root
+      | ├── assets/               # Theme assets
+      | │   ├── styles/           # Stylesheet files
+      | │   │   └── main.scss     # Sass entry point file
+      | │   └── scripts/          # JavaScript files
+      | │       └── app.js        # JavaScript entry point file
+      | ├── lib/                  # Wordpress theme selected features
+      | ├── node_modules/         # Node.js packages
+      | ├── partials/             # Partial templates
+      | ├── templates/            # Custom Wordpress templates
+      | ├── functions.php         # Wordpress hooks, theme includes
+      | └──  package.json         # Node.js dependencies and scripts

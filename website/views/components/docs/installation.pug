@@ -1,0 +1,28 @@
+.container.installation
+  h2.page-sub-title Installation
+  p.text
+    | It's possible to download a zip file from the project's repository but 
+    | we'll be showing the optimal workflow to work with this theme, which 
+    | is through the command line.
+  
+  p.steps Clone the repository:
+  
+  pre
+    code.snippet
+      | cd path/to/wp-site/wp-content/themes
+      br
+      | git clone https://github.com/Nafta7/vanilka.git theme-name
+      br
+      | cd theme-name
+
+  p.steps Install the dependencies:
+  
+  pre
+    code.snippet
+      | npm install
+  
+  p.steps Build the assets:
+  
+  pre
+    code.snippet
+      | npm build
