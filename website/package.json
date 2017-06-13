@@ -20,7 +20,7 @@
     "server": "browser-sync start --server 'dist' --files 'dist/*.css, dist/*.js, dist/*.html'",
     "watch": "npm run watch:html | npm run watch:css",
     "serve": "npm run watch | npm run server",
-    "start": "npm run serve"
+    "start": "npm run build | npm run serve"
   },
   "keywords": [],
   "author": "",
