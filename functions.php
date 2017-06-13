@@ -1,10 +1,10 @@
 <?php
 
-require_once get_template_directory() . '/core/cleanse.php';
-require_once get_template_directory() . '/core/theme_resources.php';
-require_once get_template_directory() . '/core/menus.php';
-require_once get_template_directory() . '/core/featured_image.php';
-require_once get_template_directory() . '/core/widgets.php';
+require_once get_template_directory() . '/lib/cleanse.php';
+require_once get_template_directory() . '/lib/theme_resources.php';
+require_once get_template_directory() . '/lib/menus.php';
+require_once get_template_directory() . '/lib/featured_image.php';
+require_once get_template_directory() . '/lib/widgets.php';
 
 function theme_setup() {
   cleanse_theme();
