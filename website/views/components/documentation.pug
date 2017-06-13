@@ -1,9 +1,18 @@
 .page-header-wrapper
   .container.page-header
     h1 Documentation
-    
-.documentation
-  include docs/installation.pug
-  include docs/developing.pug
-  include docs/live-reload.pug
-  include docs/structure.pug
+  
+.container
+  .two-cols
+    .main-col
+      .documentation
+        include docs/installation.pug
+        include docs/developing.pug
+        include docs/live-reload.pug
+        include docs/structure.pug
+    .aside-col
+      ul.sidebar-menu
+        li #[a(href="#installation" class="item") Installation]
+        li #[a(href="#developing" class="item") Developing]
+        li #[a(href="#live-reload" class="item") Live-reload]
+        li #[a(href="#structure" class="item") Structure]

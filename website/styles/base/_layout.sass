@@ -50,3 +50,23 @@ a:hover
 .page-sub-title
   margin-top: 2rem
   margin-bottom: 1rem
+
+.two-cols
+  display: flex
+  flex-flow: column
+
+  @include respond-to(small)
+    flex-flow: row
+
+.main-col
+  order: 2
+
+  @include respond-to(small)
+    order: 0
+    border-right: 1px solid $gray-color-l
+    padding-right: 1rem
+
+.aside-col
+  margin-left: 2rem
+  margin-top: 1rem
+  font-size: 1.15em
