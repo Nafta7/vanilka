@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- build:css main.all.css-->
+    <link rel="stylesheet" href="main.css">
+    <!-- endbuild-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vanilka - a minimal Wordpress starter theme.</title>
+  </head>
+  <body>
+    <section class="header-wrapper">
+      <div class="container">
+        <div class="header">
+          <header>
+            <h1 class="logo-title"><a href="/">Vanilka</a></h1>
+          </header>
+          <nav>
+            <ul class="menu">
+              <li><a href="/#features">Features</a></li>
+              <li><a href="/docs.html">Docs</a></li>
+              <li><a href="https://github.com/Nafta7/vanilka">Download</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <div class="page-header-wrapper">
+      <div class="container page-header">
+        <h1>Documentation</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="two-cols">
+        <div class="main-col">
+          <div class="documentation">
+            <div class="installation" id="installation">
+              <h2 class="page-sub-title">Installation</h2>
+              <p class="text">
+                It's possible to download a zip file from the project's repository but 
+                we'll be showing the optimal workflow to work with this theme, which 
+                is through the command line.
+              </p>
+              <p class="steps">Clone the repository:</p>
+              <pre><code class="snippet">cd path/to/wp-site/wp-content/themes<br>git clone https://github.com/Nafta7/vanilka.git theme-name<br>cd theme-name</code></pre>
+              <p class="steps">Install the dependencies:</p>
+              <pre><code class="snippet">npm install</code></pre>
+              <p class="steps">Build the assets:</p>
+              <pre><code class="snippet">npm build</code></pre>
+            </div>
+            <div class="developing" id="developing">
+              <h2 class="page-sub-title">Developing</h2>
+              <p class="text">
+                After installing the dependencies and building the assets, you're
+                ready to start developing your theme. All of the following commands
+                are simple npm scripts that are available inside the 
+                <span class="mark-l">package.json</span> file.
+              </p>
+              <h3 class="page-sub-title">Watching assets</h3>
+              <p class="text">
+                The following command will watch for any changes in the assets directory
+                and compile the Stylesheet and/or JavaScript file.
+              </p>
+              <pre><code class="snippet">npm run watch</code></pre>
+              <h3 class="page-sub-title">Building assets</h3>
+              <p class="text">
+                When the theme is ready for production, run the following command
+                to generate the minified version of the assets:
+              </p>
+              <pre><code class="snippet">npm run build:production</code></pre><br>
+              <p class="text">For development, run the following command:</p>
+              <pre><code class="snippet">npm run build:development</code></pre>
+            </div>
+            <div class="live-reload" id="live-reload">
+              <h2 class="page-sub-title">Enabling live-reload</h2>
+              <p class="text">
+                To enable live-reload you have to provide your 
+                <b>local dev-server address</b> 
+                to npm's <span class="mark-l">package.json</span> file. Open the 
+                <span class="mark-l">package.json</span> file 
+                and edit the proxy field in the config section with your 
+                local dev-server address.
+              </p>
+              <p class="text">Example:</p>
+              <pre><code class="snippet">"config": {
+  "proxy": "localhost:8000"
+}</code></pre><br>
+              <p class="text">
+                 Now you can run npm start to let browser-sync do the live reload:</p>
+              <pre><code class="snippet"> npm start</code></pre>
+            </div>
+            <div class="structure" id="structure">
+              <h2 class="page-sub-title">Theme structure</h2>
+              <p class="text">
+                The theme structure has the usual Wordpress theme files
+                with a couple aditions. 
+              </p>
+              <p class="text">
+                 <span class="mark-d">assets</span> directory 
+                holds the <i>Sass stylesheet files</i> (inside 
+                <span class="mark-l">styles</span> directory) 
+                and the <i>JavaScript files</i> (inside 
+                <span class="mark-l">scripts</span> directory).
+              </p>
+              <p class="text">
+                 <span class="mark-d">lib</span> is where the Wordpress theme features are enabled,
+                which are later on included or not from the 
+                <span class="mark-l">functions.php</span> file.
+                This directory should be expanded as you wish, if a Wordpress 
+                feature that you want is not available in the 
+                <span class="mark-d">lib</span>, create 
+                a new file and then include it from the 
+                <span class="mark-l">functions.php</span> and 
+                call it from the necessary hook. Just try to follow this pattern.
+              </p>
+              <p class="text"><span class="mark-d">node_modules</span> is where the Node.JS dependencies are 
+                installed, which is ignored by git through the 
+                <span class="mark-l">.gitignore</span> file.
+              </p>
+              <p class="text">
+                 <span class="mark-d">partials</span> are neatly organized by 
+                <i>post, page and sections</i>. Partials 
+                are most known as <b>template-parts</b> and are here to help you 
+                keep organized. 
+              </p>
+              <p class="text"><span class="mark-d">templates</span> directory is where the custom templates
+                lives.
+              </p>
+              <p class="text"><span class="mark-l">functions.php</span> has the Wordpress hooks and 
+                is used to select the Wordpress features enabled in 
+                the <span class="mark-d">lib</span> directory.
+              </p>
+              <p class="text"><span class="mark-l">package.json</span> is where the Node.JS 
+                dependencies and scripts are declared.
+              </p>
+              <p class="text">Be aware, the <span class="mark-l">style.css</span> file is not 
+                listed here because you should 
+                generate when you first install the theme (following the 
+                aforementioned instructions). This file is very important because 
+                it contains meta data that is necessary to activate the theme from
+                the admin panel.
+              </p>
+              <p class="text">To better illustrate the theme structure:</p>
+              <pre><code class="snippet">themes/vanilka/           # Theme root
+├── assets/               # Theme assets
+│   ├── styles/           # Stylesheet files
+│   │   └── main.scss     # Sass entry point file
+│   └── scripts/          # JavaScript files
+│       └── app.js        # JavaScript entry point file
+├── lib/                  # Wordpress theme selected features
+├── node_modules/         # Node.js packages
+├── partials/             # Partial templates
+├── templates/            # Custom Wordpress templates
+├── functions.php         # Wordpress hooks, theme includes
+└──  package.json         # Node.js dependencies and scripts</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="aside-col">
+          <ul class="sidebar-menu">
+            <li><a class="item" href="#installation">Installation</a></li>
+            <li><a class="item" href="#developing">Developing</a></li>
+            <li><a class="item" href="#live-reload">Live-reload</a></li>
+            <li><a class="item" href="#structure">Structure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <div>
+            <p>Vanilka is open-sourced under the MIT license.</p>
+          </div>
+          <div class="button-group"><a class="btn btn-inverse" href="https://github.com/Nafta7/vanilka">Github</a></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
