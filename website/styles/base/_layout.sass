@@ -14,9 +14,21 @@ a:hover
   text-decoration: overline
 
 .container
-  max-width: 900px
+
   margin: 0 auto
   padding: 0 1em
+
+  @include respond-to(extra-small)
+    max-width: 540px
+
+  @include respond-to(small)
+    max-width: 720px
+
+  @include respond-to(medium)
+    max-width: 930px
+
+  @include respond-to(large)
+    max-width: 1125px
 
 .content-main
   padding-top: 3rem
@@ -64,9 +76,11 @@ a:hover
   @include respond-to(small)
     order: 0
     border-right: 1px solid $gray-color-l
-    padding-right: 1rem
+    padding-right: 2rem
 
 .aside-col
-  margin-left: 2rem
   margin-top: 1rem
   font-size: 1.15em
+
+  @include respond-to(small)
+    margin-left: 2rem
