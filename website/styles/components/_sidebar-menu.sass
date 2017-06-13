@@ -1,0 +1,18 @@
+.sidebar-menu
+  list-style: none
+  display: flex
+  flex-flow: column
+  align-items: center
+
+  @include respond-to(extra-small)
+    flex-flow: row
+    align-items: stretch
+    justify-content: space-between
+
+  @include respond-to(small)
+    flex-flow: column
+
+  & .item
+    padding-bottom: 1rem
+    padding: 0.5rem 0
+    display: inline-block
