@@ -16,7 +16,7 @@ Clone the repository:
 
 ```bash
 cd path/to/wp-site/wp-content/themes
-git clone https://github.com/Nafta7/vanilka.git theme-name
+git clone https://github.com/Nefla/vanilka.git theme-name
 cd theme-name
 ```
 
