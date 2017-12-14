@@ -1,5 +1,5 @@
 # TODO
 
- - [ ] Documentation (installation, usage etc)
+ - [x] Documentation (installation, usage etc)
  - [ ] Custom search form
  - [ ] Search page
